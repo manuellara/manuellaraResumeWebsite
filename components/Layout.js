@@ -22,6 +22,11 @@ export default function Layout({ children }) {
                 <div>
                     Next.js <b>·</b> DigitalOcean
                 </div>
+                <div className='flex justify-center py-2'>
+                    <a target="_blank" rel="noreferrer" href="https://www.buymeacoffee.com/manuellara">
+                        <img className="rounded-full" src={process.env.NEXT_PUBLIC_BMAC} width={120} height={72} alt="Buy Me A Coffee" />
+                    </a>
+                </div>
             </footer>
 
         </div>

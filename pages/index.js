@@ -9,7 +9,7 @@ export default function Home() {
 
       <div className="flex flex-wrap place-content-around xl:mb-5 lg:mb-5 md:mb-5 sm:mb-5">
         <div className="w-1/2">
-          <img className="rounded-full" src="https://upcdn.io/FW25akz7KeNAdy6op9hU8UC" width={1930} height={2143} alt="profile picture" />
+          <img className="rounded-full" src={process.env.NEXT_PUBLIC_PROFILE_PIC} width={1930} height={2143} alt="profile picture" />
         </div>
 
         <div className="mt-5">
