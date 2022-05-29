@@ -81,7 +81,7 @@ const EmploymentTimeline = () => (
                     <ul className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400 list-disc">
                         {
                             item.discription.map((d, index) => (
-                                <li key={index}>
+                                <li key={index} className='ml-4'>
                                     {d.desc}
                                 </li>
                             ))
