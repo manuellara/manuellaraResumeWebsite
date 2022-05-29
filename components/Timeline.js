@@ -1,41 +1,42 @@
-
+import { format, formatDistance } from 'date-fns'
 
 const employmentData = [
     {
         "title": "Data Systems Analyst",
         "employer": "Tustin Unified School District",
         "address": "300 S C St, Tustin, CA 92780",
-        "start_date": new Date(2021, 5, 28).toLocaleString('en-US', { year: 'numeric', month: 'numeric', day: 'numeric' }),
+        "start_date": format(new Date(2021, 5, 28), 'M/dd/yyyy'),
         "end_date": "",
         "latest": true,
-        "discription": "• Maintain Student Information System (Aeries) \n• CALPADS state reporting \n• Maintain Learning Management System (Schoology) \n• Create and maintain integration between backend systems \n• Create and maintain system documentation"
+        discription: [{ "desc": "Maintain Student Information System (Aeries)" }, { "desc": "CALPADS state reporting" }, { "desc": "Maintain Learning Management System (Schoology)" }, { "desc": "Create and maintain integration between backend systems" }, { "desc": "Create and maintain system documentation" }]
+
     },
     {
         "title": "Applications Support Technician",
         "employer": "Inglewood Unified School District",
         "address": "401 S Inglewood Ave, Inglewood, CA 90301",
-        "start_date": new Date(2019, 4, 2).toLocaleString('en-US', { year: 'numeric', month: 'numeric', day: 'numeric' }),
-        "end_date": new Date(2021, 5, 25).toLocaleString('en-US', { year: 'numeric', month: 'numeric', day: 'numeric' }),
+        "start_date": format(new Date(2019, 4, 2), 'M/dd/yyyy'),
+        "end_date": format(new Date(2021, 5, 25), 'M/dd/yyyy'),
         "latest": false,
-        "discription": "• Maintain Student Information System (Aeries) \n• CALPADS state reporting \n• Maintain Classlink SSO \n• Create and maintain documentation \n• Interface with 3rd party vendors \n• Lead training sessions/workshops"
+        discription: [{ "desc": "Maintain Student Information System (Aeries)" }, { "desc": "CALPADS state reporting" }, { "desc": "Maintain Classlink SSO" }, { "desc": "Create and maintain documentation" }, { "desc": "Interface with 3rd party vendors" }, { "desc": "Lead training sessions/workshops" }]
     },
     {
         "title": "Computer Technician",
         "employer": "Inglewood Unified School District",
         "address": "401 S Inglewood Ave, Inglewood, CA 90301",
-        "start_date": new Date(2018, 11, 18).toLocaleString('en-US', { year: 'numeric', month: 'numeric', day: 'numeric' }),
-        "end_date": new Date(2019, 4, 1).toLocaleString('en-US', { year: 'numeric', month: 'numeric', day: 'numeric' }),
+        "start_date": format(new Date(2018, 11, 18), 'M/dd/yyyy'),
+        "end_date": format(new Date(2019, 4, 1), 'M/dd/yyyy'),
         "latest": false,
-        "discription": "• Receive tickets for projects, drive to site, discuss feasibility \n• Install and configure new computers, software, and hardware \n• Troubleshoot and diagnose software and hardware malfunctions"
+        discription: [{ "desc": "Receive tickets for projects, drive to site, discuss feasibility" }, { "desc": "Install and configure new computers, software, and hardware" }, { "desc": "Troubleshoot and diagnose software and hardware malfunctions" }]
     },
     {
         "title": "IT Help Desk",
         "employer": "CSU Dominguez Hills",
         "address": "1000 E Victoria St, Carson, CA 90747",
-        "start_date": new Date(2015, 7, 15).toLocaleString('en-US', { year: 'numeric', month: 'numeric', day: 'numeric' }),
-        "end_date": new Date(2015, 11, 15).toLocaleString('en-US', { year: 'numeric', month: 'numeric', day: 'numeric' }),
+        "start_date": format(new Date(2015, 7, 15), 'M/dd/yyyy'),
+        "end_date": format(new Date(2015, 11, 15), 'M/dd/yyyy'),
         "latest": false,
-        "discription": "• Internship resolving issues for students and faculty"
+        discription: [{ "desc": "Internship resolving issues for students and faculty" }]
     }
 ];
 
@@ -74,12 +75,18 @@ const EmploymentTimeline = () => (
                     </p>
 
                     <p className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                        {item.start_date} {item.end_date == "" ? '- Present' : `- ${item.end_date}`}
+                        {item.start_date} {item.end_date == "" ? '- Present' : `- ${item.end_date}` + ` (${formatDistance(new Date(item.start_date), new Date(item.end_date))})`}
                     </p>
 
-                    <p id="disc" className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
-                        {item.discription}
-                    </p>
+                    <ul className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400 list-disc">
+                        {
+                            item.discription.map((d, index) => (
+                                <li key={index}>
+                                    {d.desc}
+                                </li>
+                            ))
+                        }
+                    </ul>
 
                 </li>
             ))}

@@ -2,19 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-
-footer{
-    display: block;
-    text-align: center;
-    padding: 30px 0;
-    margin-top: 60px;
-    color: black;
-    border-top: 1px solid black;
-}
-
-
-#disc {
-    white-space: pre-line;
-  }

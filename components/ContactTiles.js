@@ -28,7 +28,7 @@ const ContactList = () => (
         <ul>
             {contactData.map((item, index) => (
                 <li key={index} className="mb-1">
-                    <a href={item.link} className="w-full flex p-3 pl-3 bg-gray-100 hover:bg-gray-200 rounded-lg">
+                    <a href={item.link} className="w-full flex p-3 pl-3 bg-gray-100 hover:bg-gray-200 rounded-lg border border-black">
                         <svg className="flex-none w-6 h-full" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                             <path d={item.svgIcon} />
                         </svg>
