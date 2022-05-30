@@ -11,7 +11,7 @@ export default function Footer() {
             </div>
             <div className='flex justify-center py-2'>
                 <a target="_blank" rel="noreferrer" href="https://www.buymeacoffee.com/manuellara">
-                    <img className="rounded-full border-2 border-black" src={process.env.NEXT_PUBLIC_BMAC} width={120} height={72} alt="Buy Me A Coffee" />
+                    <img className="rounded-full" src={process.env.NEXT_PUBLIC_BMAC} width={120} height={72} alt="Buy Me A Coffee" />
                 </a>
             </div>
             <div className='flex justify-center py-2'>
