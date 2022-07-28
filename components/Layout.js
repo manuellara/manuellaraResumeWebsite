@@ -1,22 +1,25 @@
-import Head from 'next/head'
-import Footer from './Footer'
+import Head from "next/head"
+import Footer from "./Footer"
+import Navbar from "./Navbar"
 
 export default function Layout({ children }) {
     return (
-        <div id="body">
+        <div className="">
 
             <Head>
-                <title>
-                    Manuel Lara
-                </title>
-                <link rel="shortcut icon" href="/laptop.ico" />
+                <title>Manuel Lara</title>
+                <link rel="icon" href="/laptop.ico" />
             </Head>
 
-            <main className='container mx-auto max-w-xl py-8 px-5 min-h-screen'>
-                {children}
-            </main>
+            <div className="min-h-screen flex flex-col">
+                <Navbar />
 
-            <Footer />
+                <main className="flex-grow">
+                    {children}
+                </main>
+
+                <Footer />
+            </div>
 
         </div>
     )
