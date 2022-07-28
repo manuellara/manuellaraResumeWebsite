@@ -9,7 +9,7 @@ export default function Hero() {
             </h1>
 
             <h2 className='text-4xl my-3'>
-                and I&quot;m a Data Analyst 👨🏻‍💻 🏗 🔬 📊
+                and I&apos;m a Data Analyst 👨🏻‍💻 🏗 🔬 📊
             </h2>
 
             <h3 className='text-2xl my-3'>
